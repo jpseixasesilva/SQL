@@ -1,0 +1,33 @@
+#1 Select count(distinct (UserID))  FROM Users where Gender = 'Male' and Monthly_Income between 1500 and 5500;
+
+#2 Select count(distinct (Event_Type))  FROM Events where Event_UserID = 70;
+
+#3 Select count(distinct (Event_type))  FROM Events,Users where Events.Event_Type = 'Added to Cart' and Users.Age > 20 and Users.Monthly_Income between 1000 and 3000;
+
+#4 Select distinct (Events.Event_Value) From Users JOIN Events
+On Users.UserID = Events.Event_UserID Where Events.Event_Type = 'Added to Cart' and Users.Gender = 'Male' and Users.Age between 20 and 50 and  Users.Monthly_Income between 100 and 3000;
+
+#5 Select * from Events where Event_Type = 'Paid' order by Event_Value desc;
+
+#6 Select Users.UserID, Users.Name , Count(*) as Total From Users, Events Where Events.Event_UserID = Users.UserID group by Users.UserID, Users.Name order by Users.Name asc
+;
+        
+#7 select Gender, avg (Age) from Users group by Gender ;
+
+#8 Select distinct Users.Name  From Users Join Events On Users.UserID = Events.Event_UserID Where Users.Name like '%a%' and Events.Event_Type = 'Paid' ;
+
+#9 Select Signup_Date, count(distinct(Name)) as total From Users group by Signup_Date order by total desc;
+                       
+#10 Select Users.Name, Event_UserID,  CAST(CAST(SUM(Event_Value) AS SIGNED) as SIGNED) as Valor  From Users inner join Events on Users.UserID = Events.Event_UserID Where Events.Event_Type = 'Checkout' group by Name,Event_UserID;
+
+#11 Serão retornado todos os dados(colunas) de mulheres que recebem mensalmente mais que a média salarial mensal do todos homens.
+
+#12 Será retornado a média salarial, o menor salário e o maior salário dentre todos homens e mulheres.
+
+#13 Será retornado a quantidade de usuários distintos que adicionaram produtos ao seu carrinho de compras.
+
+#14 Será retornado uma tabela com uma quantidade de campos derivado da multiplicação das duas tabelas (Users e Events) e todo seu conteúdo replicado pela mesma grandeza. 
+
+#15 Será retornado uma tabela com uma contagem do número de usuários que recebem dentro de uma faixa salarial mensal específica. Ex.: Quantos usuários recebem em entre 1000 e 2000, são 3; quantos recebem entre 2000 e 3000, apenas 1.
+
+
